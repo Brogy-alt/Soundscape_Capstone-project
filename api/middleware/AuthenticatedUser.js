@@ -3,7 +3,7 @@ require('dotenv').config();
 const {sign, verify} = require('jsonwebtoken');
 // creation of token
 function createToken(user) {
-    return sogn({
+    return sign({
         emailAdd
         :user.emailAdd,
         userPass:user.userPass
