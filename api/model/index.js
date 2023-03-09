@@ -169,9 +169,9 @@ class Product {
         `;
         db.query(strQry,[data],(err)=> {
                 if(err){
-                    res.status(400).json({err: "Unable to insert a new record."});
+                    res.status(400).json({err: "Sorry unable to insert a new record."});
                 }else {
-                    res.status(200).json({msg: "Product saved"});
+                    res.status(200).json({msg: "AWESOME! a product was saved"});
                 }
             }
         );
@@ -186,9 +186,9 @@ class Product {
         db.query(strQry,[req.body, req.params.id],
             (err)=> {
                 if(err){
-                    res.status(400).json({err: "Unable to update a record."});
+                    res.status(400).json({err: "Sorry Unable to update a record."});
                 }else {
-                    res.status(200).json({msg: "Product updated"});
+                    res.status(200).json({msg: "COOL! a product was updated"});
                 }
             }
         );
@@ -200,13 +200,71 @@ class Product {
         WHERE productID = ?;
         `;
         db.query(strQry,[req.params.id], (err)=> {
-            if(err) res.status(400).json({err: "The record was not found."});
-            res.status(200).json({msg: "A product was deleted."});
+            if(err) res.status(400).json({err: "Sorry could not remove product"});
+            res.status(200).json({msg: "NICE! a product was deleted."});
         })
     }
 }
+
+class Cart {
+    addCart(req, res) {
+        const data = req.body;
+        const strQry =
+        `
+        INSERT INTO Cart
+        SET ?;
+        `;
+        db.query(strQry,[data],(err)=> {
+                if(err){
+                    res.status(400).json({err: "Sorry Unable to insert into cart."});
+                }else {
+                    res.status(200).json({msg: "GREAT! saved to cart"});
+                }
+            }
+        );
+    }
+    fetchCart(req, res) {
+        const strQry = 
+        `SELECT prodName, prodPrice, imgURL
+        FROM Users
+        inner join Cart on Users.userID = Cart.userID
+        inner join Products on Cart.productID = Products.productID
+        where Cart.userID = ${req.params.id}
+        `;
+        db.query(strQry, (err, results)=> {
+            if(err) throw err;
+            res.status(200).json({results})
+        });
+    }
+
+    deleteAllcart(req, res) {
+        const strQry =
+        `
+        DELETE FROM Cart
+        WHERE userID = ?;
+        `;
+        db.query(strQry,[req.params.id], (err)=> {
+            if(err) res.status(400).json({err: "Sorry could not remove."});
+            res.status(200).json({msg: "COMPLETE! all orders was removed."});
+        })
+    }
+    deleteCart(req, res) {
+        const strQry =
+        `
+        DELETE FROM Cart
+        WHERE productID = ?;
+        `;
+        db.query(strQry,[req.params.id], (err)=> {
+            if(err) res.status(400).json({err: "Sorry could not remove."});
+            res.status(200).json({msg: "SUCCESSFUL! a order was removed."});
+        })
+    }
+}  
+    
+
 // Export User class
 module.exports = {
     User,
-    Product
+    Product,
+    Cart
 }

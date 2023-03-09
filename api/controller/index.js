@@ -6,11 +6,14 @@ const bodyParser = require('body-parser');
 // Router
 const route = express.Router();
 // Models
-const {User, Product} = require('../model');
+const {User, Product, Cart} = require('../model');
 // Create a user instance
 const user = new User();
 // Product instance
 const product = new Product();
+// Cart instence
+const cart = new Cart();
+
 route.get('^/$|/jDotify application', (req, res)=>{
     res.status(200).sendFile(path.join(__dirname, '../view/index.html'));
 })
@@ -56,8 +59,6 @@ route.get('/product/:id',
 })
 // Add a new product
 route.post('/product', bodyParser.json(), (req, res)=> {
-    // use console.log if err occurs
-    // console.log(req.body);
     product.addProduct(req, res);
 })
 // Update a product
@@ -71,4 +72,26 @@ route.delete('/product/:id',
 (req, res)=> {
     product.deleteProduct(req, res);
 })
+
+// =======Cart routes========
+// add to cart
+route.post('/user/:id/cart',
+bodyParser.json(), (req, res)=> {
+    cart.addCart(req, res);
+})
+// fetch cart
+route.get('/user/:id/carts',bodyParser.json(), (req, res)=>{
+    cart.fetchCart(req, res);
+});
+// delete all in cart
+route.delete('/user/:id/cart', 
+(req, res)=> {
+    cart.deleteAllcart(req, res);
+})
+// delete 1 in cart
+route.delete('/user/:id/cart/:id', 
+(req, res)=> {
+    cart.deleteCart(req, res);
+})
+
 module.exports = route;
