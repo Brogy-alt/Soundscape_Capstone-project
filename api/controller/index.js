@@ -93,5 +93,11 @@ route.delete('/user/:id/cart/:id',
 (req, res)=> {
     cart.deleteCart(req, res);
 })
+// update cart item
+route.put('/user/:id/cart/:id', 
+bodyParser.json(),
+(req, res)=> {
+    cart.updateCart(req, res);
+})
 
 module.exports = route;

@@ -259,6 +259,24 @@ class Cart {
             res.status(200).json({msg: "SUCCESSFUL! a order was removed."});
         })
     }
+
+    updateCart(req, res) {
+        const strQry =
+        `
+        UPDATE Cart
+        SET ?
+        WHERE orderID = ?
+        `;
+        db.query(strQry,[req.body, req.params.id],
+            (err)=> {
+                if(err){
+                    res.status(400).json({err: "Sorry unable to update a record."});
+                }else {
+                    res.status(200).json({msg: "COOL! a product was updated"});
+                }
+            }
+        );
+    }
 }  
     
 
