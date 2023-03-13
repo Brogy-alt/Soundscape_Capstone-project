@@ -49,26 +49,26 @@ route.delete('/user/:id', (req, res)=>{
 
 // =====Products======
 // Fetch all products
-route.get('/products', (req, res)=> {
+route.get('/items', (req, res)=> {
     product.fetchProducts(req, res);
 })
 // Fetch a single product
-route.get('/product/:id', 
+route.get('/item/:id', 
 (req, res)=> {
     product.fetchProduct(req, res);
 })
 // Add a new product
-route.post('/product', bodyParser.json(), (req, res)=> {
+route.post('/items', bodyParser.json(), (req, res)=> {
     product.addProduct(req, res);
 })
 // Update a product
-route.put('/product/:id', 
+route.put('/item/:id', 
 bodyParser.json(),
 (req, res)=> {
     product.updateProduct(req, res);
 })
 // Delete a product
-route.delete('/product/:id', 
+route.delete('/item/:id', 
 (req, res)=> {
     product.deleteProduct(req, res);
 })

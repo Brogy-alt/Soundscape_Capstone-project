@@ -1,0 +1,131 @@
+# Product backup data #
+
+{
+    "results": [
+        {
+            "productID": 1,
+            "prodName": "Kortex",
+            "prodCategory": "Rehabilitation",
+            "prodDescription": "VR rehabilitation is used to help patients with broken bones recover by creating virtual environments and exercises that simulate movements and activities that would  typically be difficult or painful to perform in real life.",
+            "prodPrice": 20000,
+            "prodType": "Medical",
+            "prodQuantity": 10,
+            "imgURL": "https://i.postimg.cc/CxB884xQ/VR-medical-training.jpg"
+        },
+        {
+            "productID": 2,
+            "prodName": "Rehamove",
+            "prodCategory": "Rehabilitation",
+            "prodDescription": "This is a virtual reality-based rehabilitation system designed to help patients recover from stroke, spinal cord injuries, and other neurological conditions.",
+            "prodPrice": 17000,
+            "prodType": "Medical",
+            "prodQuantity": 15,
+            "imgURL": "https://i.postimg.cc/tJF3zLtk/Physical-Therapy-Pain-mangement.jpg"
+        },
+        {
+            "productID": 3,
+            "prodName": "ImmersiveTouch:",
+            "prodCategory": "Medical training",
+            "prodDescription": "This is a VR platform used for surgical planning and medical training",
+            "prodPrice": 20000,
+            "prodType": "Medical",
+            "prodQuantity": 8,
+            "imgURL": "https://i.postimg.cc/nhsQpyNL/vr-surgery-simulation.png"
+        },
+        {
+            "productID": 4,
+            "prodName": "Virtual recording studio",
+            "prodCategory": "Music production",
+            "prodDescription": "Virtual recording studio that allows musicians to record tracks and mix them together in a 3D environment. This can provide a more immersive and intuitive experience than traditional digital audio workstations. ",
+            "prodPrice": 13000,
+            "prodType": "Production",
+            "prodQuantity": 20,
+            "imgURL": "https://i.postimg.cc/XY3T7vBV/vr-for-music-producers.jpg"
+        },
+        {
+            "productID": 5,
+            "prodName": "HTC Vive Pro 2",
+            "prodCategory": "Entertainment",
+            "prodDescription": "For gamers, specialists or budget-busting enthusiasts, the HTC Vive Pro 2's 4896 x 2448 resolution, pinpoint motion tracking, and Steam VR integrations make it a must-see",
+            "prodPrice": 8000,
+            "prodType": "Gaming",
+            "prodQuantity": 15,
+            "imgURL": "https://i.postimg.cc/y85D92mr/Gaming-Vr-headset-vive.jpg"
+        },
+        {
+            "productID": 6,
+            "prodName": "Oculus Quest 2",
+            "prodCategory": "Entertainment",
+            "prodDescription": " The Oculus Quest 2 is a powerful and versatile VR headset that provides a high-quality immersive experience for users. Its standalone design and inside-out tracking make it easy to use and set up, while its powerful hardware and large library of VR games and applications.",
+            "prodPrice": 10000,
+            "prodType": "Gaming",
+            "prodQuantity": 18,
+            "imgURL": "https://i.postimg.cc/tTwdky11/Oculus-Quest-2.jpg"
+        },
+        {
+            "productID": 7,
+            "prodName": "HP Reverb G2",
+            "prodCategory": "Entertainment",
+            "prodDescription": "Overall, the HP Reverb G2 is a high-quality VR headset designed for serious VR enthusiasts and professionals. Its high-resolution display, wide field of view, and advanced audio and tracking technologies make it a great choice for VR gaming, simulation, and other applications that require a high level of immersion and precision.",
+            "prodPrice": 11000,
+            "prodType": "Gaming",
+            "prodQuantity": 14,
+            "imgURL": "https://i.postimg.cc/4xTxkMCr/HP-Reverb-G2.jpg"
+        },
+        {
+            "productID": 8,
+            "prodName": "Valve Index",
+            "prodCategory": "Production",
+            "prodDescription": "Overall, the Valve Index is a high-quality VR headset designed for professional architectures who have the digital skills to create designs with VR. Its high-resolution display, wide field of view, advanced audio and tracking technologies, and comfortable design make it a great choice for architecture and design.",
+            "prodPrice": 14000,
+            "prodType": "Architecture and design",
+            "prodQuantity": 15,
+            "imgURL": "https://i.postimg.cc/qq66QZSj/Valve-Index.jpg"
+        },
+        {
+            "productID": 9,
+            "prodName": "PSVR 2",
+            "prodCategory": "Entertainment",
+            "prodDescription": "Overall, the PSVR 2 is expected to be a significant improvement over the original PSVR, with higher resolution, improved tracking and controllers, and a more comfortable and immersive experience.",
+            "prodPrice": 10000,
+            "prodType": "Gaming",
+            "prodQuantity": 12,
+            "imgURL": "https://i.postimg.cc/VLNqpm0H/PSVR-2.png"
+        },
+        {
+            "productID": 10,
+            "prodName": "HTC Vive Cosmos Elite",
+            "prodCategory": "Entertainment",
+            "prodDescription": "Overall, the HTC Vive Cosmos Elite has high-resolution display, wide field of view, advanced audio and tracking technologies, and comfortable design make it a great choice for VR gaming, simulation, and other applications that require a high level of immersion and precision.",
+            "prodPrice": 9000,
+            "prodType": "Gaming",
+            "prodQuantity": 13,
+            "imgURL": "https://i.postimg.cc/6QSnV7hN/HTC-Vive-Cosmos-Elite.jpg"
+        }
+    ]
+
+# Users backup data #
+{
+    "results": [
+        {
+            "firstName": "Brogan",
+            "lastName": "Gys",
+            "cellphoneNumber": "1234567891",
+            "emailAdd": "brogan@gmail.com",
+            "userPass": "$2b$15$vCuU5dhC/SfmY4PXMQH75.0Wn9e3jmvdU4XHY18f2RcEc7/SVeexe",
+            "userRole": "Admin",
+            "gender": "male",
+            "userProfile": "https://i.postimg.cc/pTLmhdpj/placeholder-person.jpg"
+        },
+        {
+            "firstName": "Meezaan",
+            "lastName": "Davids",
+            "cellphoneNumber": "0987654321",
+            "emailAdd": "meezaan@gmail.com",
+            "userPass": "$2b$10$7OXK9PyBOhhp3lc4w1UGI.WNDg9lBHRZzqVaFSUG4R1jWoRD9smxS",
+            "userRole": "User",
+            "gender": "male",
+            "userProfile": "https://i.postimg.cc/pTLmhdpj/placeholder-person.jpg"
+        }
+    ]
+}
