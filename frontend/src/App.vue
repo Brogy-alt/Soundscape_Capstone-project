@@ -8,7 +8,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  
 }
 
 *,
@@ -17,6 +17,7 @@
   padding : 0;
   margin: 0;
   box-sizing: border-box;
+  --bs-gutter-x:0 !important;
 }
 
 </style>
