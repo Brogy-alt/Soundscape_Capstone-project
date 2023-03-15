@@ -12,13 +12,16 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="products">Shop</a>
+          <a class="nav-link" href="/products">Shop</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="display">Display</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="/admin">Admin</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="admin">Admin</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact">Contact</a>
+          <a class="nav-link" href="/contact">Contact</a>
         </li>
       </ul>
       <span class="navbar-text" style="display:flex;">

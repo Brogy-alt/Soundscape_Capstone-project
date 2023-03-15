@@ -1,7 +1,9 @@
 <template >
     <NavbarC />
     <div>
+      <div class="heading-users">
         <h2>Users table</h2>
+        </div>
         <SpinnerC v-if="isSpinning" />
 
         <div class="container-fluid" v-else>
@@ -32,8 +34,10 @@
                         <td>{{ user.userRole }}</td>
                         <!-- edit button -->
                         <td><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Edit</button></td>
+                        
                         <!-- delete button -->
                         <td> <button type="button" class="btn btn-dark">Delete</button></td>
+                        
 
                       
                     </tr>
@@ -49,12 +53,12 @@
                 <thead>
                     <tr>
                         <th >ID</th>
-                        <th >Product name</th>
-                        <th >Product Category name</th>
-                        <th >Product price</th>
-                        <th>Product Category</th>
-                        <th >Product quantity</th>
-                        <th data-label="Profile">Profile</th>
+                        <th >Product Name</th>
+                        <th >Product Category</th>
+                        <th >Product Price</th>
+                        <th>Product Type</th>
+                        <th >Product Quantity</th>
+                        <th data-label="Profile">Product Image</th>
                         
                         
                         <th>Edit</th>
@@ -71,7 +75,8 @@
                         <td data-label="Product quantity" >{{ product.prodQuantity }}</td>
                         <td data-label="Product img"><img :src="product.imgURL" style="width:210px; height:180px" alt="img"></td>
                         <!-- edit button -->
-                        <td><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Edit</button></td>
+                        <!-- <td><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Edit</button></td> -->
+                        <td><UpdateProduct/></td>
                         <!-- delete button -->
                         <td> <button type="button" class="btn btn-dark">Delete</button></td>
                     </tr>
@@ -89,12 +94,14 @@ import FooterC from '@/components/FooterC.vue';
 import SpinnerC from '@/components/SpinnerC.vue';
 import { useStore } from 'vuex';
 import { computed } from '@vue/runtime-core';
+import UpdateProduct from '@/components/UpdateProduct.vue';
 
 export default {
     components: {
         SpinnerC,
         FooterC,
-        NavbarC
+        NavbarC,
+        UpdateProduct
     },
 
     setup() {
@@ -124,6 +131,14 @@ export default {
 
 </script>
 <style scoped>
+
+.heading-users{
+  height: 10rem;
+  padding-top: 40px;
+}
+
+
+
 td {
     word-break: break-all;
     word-wrap: break-word;

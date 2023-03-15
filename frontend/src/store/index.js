@@ -9,8 +9,8 @@ export default createStore({
     products: null,
     product: null,
     showSpinner: null,
+    asc:true
   },
-  getters: {},
   mutations: {
     setUsers(state, values) {
       state.users = values;
@@ -30,6 +30,15 @@ export default createStore({
     setMessage(state, value) {
       state.message = value;
     },
+    sortProductsByprice:(state) =>  {
+      state.products.sort((a,b) => {
+        return a.prodPrice - b.prodPrice;
+      });
+      if(!state.asc) {
+        state.products.reverse();
+      }
+      state.asc = !state.asc
+    }
   },
   actions: {
     async login(context, payload) {
@@ -58,11 +67,13 @@ export default createStore({
         context.commit("setProducts", results);
       }
     },
-    async fetchProduct(context, id
-      ) {
+    async fetchProduct(context, id) {
       const res = await axios.get(`${virtuverse}product/${id}`);
-      console.log(await res.data);
-      context.commit("setProduct", await res.data);
+      const {results} = (await res.data);
+      if(results){
+       console.log(results);
+       context.commit("setProduct", results[0]);
+      }
     },
     async fetchUsers(context) {
       const res = await axios.get(`${virtuverse}users`);
@@ -79,4 +90,4 @@ export default createStore({
     },
   },
   modules: {},
-});
+})
