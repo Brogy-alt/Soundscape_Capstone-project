@@ -42,14 +42,20 @@ export default createStore({
   },
   actions: {
     async login(context, payload) {
+    try {
       const res = await axios.post(`${virtuverse}login`, payload);
+      console.log('Results:', res);
       const { result, err } = await res.data;
       if (result) {
         context.commit("setUser", result);
       } else {
         context.commit("setMessage", err);
       }
-    },
+    }
+    catch (error) {
+      console.error(error)
+    }
+  },
     async register(context, payload) {
       let res = await axios.post(`${virtuverse}register`, payload);
       let { msg, err } = await res.data;

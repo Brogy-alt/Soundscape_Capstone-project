@@ -21,15 +21,21 @@
 <section class="container">
             <div class="contact">
                 <h2 class="text-light">Contact us </h2>
-                <form action="https://formspree.io/f/xbjbywjp" method="POST" ><br>
+                <form @submit.prevent="login" ><br>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                        <input type="password" v-model="payload.passUser" class="form-control"   placeholder="Enter password" required>
+
+                        <label for="exampleInputPassword1">Email</label>
+                        <input type="email" v-model="payload.emailAdd"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    </div>
+
+                    <div>
+                        <p>{{ message }}</p>
                     </div>
                     
-
-                    <div class="button">
-                        <input type="submit" value="submit">
+                    <div>
+                        <button class="btn btn-danger" type="submit" @click.prevent="login">Login </button>
                     </div>
                     <br>
                 </form>
@@ -46,10 +52,30 @@
 import NavbarC from '@/components/NavbarC.vue';
 import FooterC from '@/components/FooterC.vue';
 
+
 export default {
     components:{
     FooterC,
     NavbarC
+    },
+    data() {
+        return{
+        payload: {
+            emailAdd: '',
+            userPass: ''
+            }
+        }
+    },
+    computed: {
+        message() {
+            return this.$store.state.message
+        }
+    },
+    methods: {
+        login() {
+            console.log('Return:', this.payload);
+            this.$store.dispatch('login', this.payload)
+        }
     }
 }
 </script>
