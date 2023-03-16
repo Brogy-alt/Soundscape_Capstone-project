@@ -42,8 +42,21 @@ const routes = [
     name: 'display',
     
     component: () => import(/* webpackChunkName: "about" */ '../views/DisplayView.vue')
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    
+    component: () => import(/* webpackChunkName: "about" */ '../views/CreateAccountView.vue')
+  },
+  {
+    path: '/userpage',
+    name: 'userpage',
+    
+    component: () => import(/* webpackChunkName: "about" */ '../views/UserPageView.vue')
   }
 ]
+
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

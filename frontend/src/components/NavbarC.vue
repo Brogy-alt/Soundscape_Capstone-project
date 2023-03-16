@@ -14,9 +14,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/products">Shop</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="display">Display</a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="/admin">Admin</a>
         </li>
@@ -27,16 +24,16 @@
       <span class="navbar-text" style="display:flex;">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <!-- cart -->
+            <!-- sign up-->
             <!-- links should be added -->
-      <a href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+      <a class="signup" href="/signup">Sign up</a>
     </li>
   </ul>
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item" >
             <!-- login -->
              <!-- links should be added -->
-    <a href="login"><i class="fa-regular fa-user"></i></a>
+    <a class="login" href="/login">Login</a>
   </li>
   </ul>
 
@@ -44,7 +41,7 @@
           <li class="nav-item" >
             <!-- sign in -->
              <!-- links should be added -->
-    <a href="#"><i class="fa-solid fa-person-walking"></i></a>
+    <a class="account" href="/userpage">Account</a>
   </li>
   </ul>
       </span>
@@ -64,6 +61,15 @@ ul{
   padding-right : 20px ;
 }
 
+.login{
+  text-decoration: none;
+}
 
+.account{
+  text-decoration: none;
+}
 
+.signup{
+  text-decoration: none;
+}
 </style>

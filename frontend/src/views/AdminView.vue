@@ -45,7 +45,7 @@
             </table>
         </div>
 
-        <h2>Products table</h2>
+        <h2 class="heading-products">Products table</h2>
         <SpinnerC v-if="isSpinning" />
 
         <div class="container-fluid" v-else>
@@ -73,7 +73,7 @@
                         <td data-label="Product price" >R{{ product.prodPrice }}</td>
                         <td data-label="Product type" >{{ product.prodType }}</td>
                         <td data-label="Product quantity" >{{ product.prodQuantity }}</td>
-                        <td data-label="Product img"><img :src="product.imgURL" style="width:210px; height:180px" alt="img"></td>
+                        <td data-label="Product img"><img class="img-fluid" :src="product.imgURL" style="width:210px; height:180px" alt="img"></td>
                         <!-- edit button -->
                         <!-- <td><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Edit</button></td> -->
                         <td><UpdateProduct/></td>
@@ -132,10 +132,7 @@ export default {
 </script>
 <style scoped>
 
-.heading-users{
-  height: 10rem;
-  padding-top: 40px;
-}
+
 
 
 

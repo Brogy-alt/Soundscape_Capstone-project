@@ -1,13 +1,16 @@
 import { createStore } from "vuex";
 import axios from "axios";
+import Cookies from "js-cookie";
 const virtuverse = "https://virtuverse-capstone-project.onrender.com/";
 // render
 export default createStore({
   state: {
     users: null,
     user: null,
+    userAuth: false,
     products: null,
     product: null,
+    token: null,
     showSpinner: null,
     asc:true
   },
@@ -17,6 +20,7 @@ export default createStore({
     },
     setUser(state, value) {
       state.user = value;
+      state.userAuth = true
     },
     setProducts(state, products) {
       state.products = products;
@@ -27,8 +31,11 @@ export default createStore({
     setSpinner(state, value) {
       state.showSpinner = value;
     },
-    setMessage(state, value) {
-      state.message = value;
+    setToken(state, value) {
+      state.token = value
+    },
+    setMessage(state, message) {
+      state.message = message;
     },
     sortProductsByprice:(state) =>  {
       state.products.sort((a,b) => {
@@ -45,9 +52,12 @@ export default createStore({
     try {
       const res = await axios.post(`${virtuverse}login`, payload);
       console.log('Results:', res);
-      const { result, err } = await res.data;
+      const { result, jwToken, msg , err } = await res.data;
       if (result) {
         context.commit("setUser", result);
+        context.commit('setToken', jwToken);
+        Cookies.set('user_cookie', jwToken)
+        context.commit('setMessage', msg)
       } else {
         context.commit("setMessage", err);
       }

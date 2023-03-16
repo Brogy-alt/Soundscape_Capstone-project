@@ -3,7 +3,7 @@
         <footer>
             <div class="footer">
                 <div class="row">
-                    <ul>
+                    <ul class="icons">
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                         <li><a href="#"><i class="fa fa-youtube"></i></a></li>
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class=" m-0 pb-2" id="copyright">
-                    
+
                     Virtuverse Copyright © 2023 Virtuverse - All rights reserved || Designed By: Brogan Gys
                 </div>
             </div>
@@ -43,6 +43,7 @@ export default {
     padding: 40px 0px;
     font-family: 'Play', sans-serif;
     text-align: center;
+    
 }
 
 .footer #copyright {
@@ -51,9 +52,9 @@ export default {
     padding: 0.6% 0%;
     color: rgb(0, 0, 0);
     font-size: 1rem;
-    
-    
-    
+
+
+
 }
 
 .footer .row a {
@@ -80,7 +81,7 @@ export default {
     margin: 0% 1%;
 }
 
-@media (max-width:720px) {
+@media (max-width:300px) {
     .footer {
         text-align: left;
         padding: 5%;
@@ -94,6 +95,13 @@ export default {
 
     .footer .row a i {
         margin: 0% 3%;
+    }
+}
+
+@media(max-width: 300px) {
+    .footer .row .icons{
+        gap: 40px;
+        display: flex;
     }
 }
 </style>      

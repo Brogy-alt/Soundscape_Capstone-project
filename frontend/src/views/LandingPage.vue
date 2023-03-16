@@ -10,16 +10,6 @@
 
   <section class="home">
 
-    <!-- <div class="header">
-            <div class="row d-flex flex-column flex-md-row">
-            <div class="inner-header flex">
-              <h1>EXPLORE.
-                DISCOVER.
-                CREATE.</h1>
-              </div>
-            </div>
-        </div> -->
-
     <div class="container">
       <div class="row">
         <div class="col-sm">
@@ -37,9 +27,10 @@
       </div>
     </div>
 
+    
 
-    <!-- <h2 class="heading-about">About </h2> -->
 
+    
     <div class="container">
       <div class="row">
         <div class="col-sm">
@@ -101,10 +92,12 @@
 <script>
 import NavbarC from '@/components/NavbarC.vue';
 import FooterC from '@/components/FooterC.vue';
+
 export default {
   components: {
     NavbarC,
-    FooterC
+    FooterC,
+
   }
 }
 </script>

@@ -35,7 +35,7 @@
 
     <div v-else>
       <input type="text" placeholder="Search Category" v-model="searching">
-      <button @click.prevent="priceSort" class="btn btn-dark">Sort</button>
+      <button @click.prevent="priceSort" class="btn btn-dark">Sort by price</button>
       <div class="row" style="justify-content: center;gap:1rem;">
         <div class="card" style="width: 18rem;" v-for="product in search" :key="product.id">
           <img :src="product.imgURL" class="card-img-top" alt="product img" style="height: 12rem;">
@@ -44,7 +44,7 @@
             <h5 class="card-title">{{ product.prodName }}</h5>
             <p class="card-text">{{ product.prodCategory }}</p>
             <p class="card-text">R{{ product.prodPrice }}</p>
-            <router-link :to="{ name: 'display', params: { id: product.productID } }"><button>View</button></router-link>
+            <router-link :to="{ name: 'display', params: { id: product.productID } }"><button v-if="this.$store.state.userAuth">View</button></router-link>
 
 
 
@@ -63,6 +63,7 @@
 import NavbarC from '@/components/NavbarC.vue';
 import FooterC from '@/components/FooterC.vue';
 import SpinnerC from '@/components/SpinnerC.vue';
+
 
 export default {
   components: {
@@ -96,7 +97,7 @@ export default {
     },
     search() {
       if (this.searching.trim().length > 0) {
-        return this.products.filter((input) => input.prodCategory.toLowerCase().includes(this.searching.trim()
+        return this.products.filter((input) => input.prodCategory.prodNatoLowerCase().includes(this.searching.trim()
           .toLowerCase()))
       }
       return this.products

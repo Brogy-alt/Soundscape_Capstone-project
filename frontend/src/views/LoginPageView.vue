@@ -1,74 +1,75 @@
 <template>
       <NavbarC />
-    <!-- <div class="login-form">
-        <form class="container">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> -->
 
 <section class="container">
             <div class="contact">
                 <h2 class="text-light">Contact us </h2>
                 <form @submit.prevent="login" ><br>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" v-model="payload.passUser" class="form-control"   placeholder="Enter password" required>
-
+                     
                         <label for="exampleInputPassword1">Email</label>
                         <input type="email" v-model="payload.emailAdd"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
-                    </div>
 
-                    <div>
-                        <p>{{ message }}</p>
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" v-model="payload.userPass" class="form-control"   placeholder="Enter password" required>
+
                     </div>
-                    
-                    <div>
-                        <button class="btn btn-danger" type="submit" @click.prevent="login">Login </button>
+                    <div class="button pt-4 pb-4">
+                        <button class="btn btn-dark" type="submit" @click.prevent="login">Login </button>
                     </div>
                     <br>
+                    <SpinnerC v-if="isSpinning" />
+                    <div>
+                        <p class="message m-2">{{ message }} </p>
+                        <p class="message m-2">{{ user?.firstName }}</p>
+                        <p class="message m-2">{{ user?.lastName }}</p>
+                    </div>
+
+                    <div class="login ms-auto pb-5">
+                        <p>Don't have an account?</p> <a href="/signup">Sign up</a>
+                    </div>
                 </form>
             </div>
 </section>
 
 
-    <FooterC />
+    <!-- <FooterC /> -->
 </template>
 
 <script>
 
 
 import NavbarC from '@/components/NavbarC.vue';
-import FooterC from '@/components/FooterC.vue';
+import SpinnerC from '@/components/SpinnerC.vue';
+// import FooterC from '@/components/FooterC.vue';
 
 
 export default {
     components:{
-    FooterC,
+    // FooterC,
+    SpinnerC,
     NavbarC
     },
     data() {
         return{
         payload: {
             emailAdd: '',
-            userPass: ''
+            userPass: '',
+            isSpinning: true
             }
         }
+    },
+    created() {
+        setTimeout(() => {
+            this.isSpinning = false;
+        }, 3000);
     },
     computed: {
         message() {
             return this.$store.state.message
+        },
+        user(){
+            return this.$store.state.user
         }
     },
     methods: {
@@ -78,6 +79,7 @@ export default {
         }
     }
 }
+
 </script>
 <style scoped>
 
@@ -96,10 +98,10 @@ form{
 
 
 .container {
- 
+  margin-top: 70px;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; or any other height */
+  height: 50vh; 
   text-align: center;
 }
 
