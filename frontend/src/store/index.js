@@ -7,7 +7,7 @@ export default createStore({
   state: {
     users: null,
     user: null,
-    userAuth: false,
+    userAuth: true,
     products: null,
     product: null,
     token: null,
@@ -66,13 +66,34 @@ export default createStore({
       console.error(error)
     }
   },
-    async register(context, payload) {
-      let res = await axios.post(`${virtuverse}register`, payload);
-      let { msg, err } = await res.data;
-      if (msg) {
-        context.commit("setMessage", msg);
-      } else {
-        context.commit("setMessage", err);
+    async userRegister(context, payload) {
+      try {
+        const res = await axios.post(`${virtuverse}register`, payload);
+        console.log('Result:', res);
+        const { result, message, err } = await res.data;
+        if (result) {
+          context.commit("setUser", result)
+          context.commit("setMessage", message);
+        } else {
+          context.commit("setMessage", err);
+        }
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async createProduct(context, payload) {
+      try {
+        const res = await axios.post(`${virtuverse}product`, payload);
+        console.log('Result:', res);
+        const { result, message, err } = await res.data;
+        if (result) {
+          context.commit("setProduct", result)
+          context.commit("setMessage", message);
+        } else {
+          context.commit("setMessage", err);
+        }
+      } catch (error) {
+        console.error(error)
       }
     },
     async fetchProducts(context) {
@@ -102,7 +123,7 @@ export default createStore({
     async fetchUser(context, id) {
       const res = await axios.get(`${virtuverse}user/${id}`);
       console.log(await res.data);
-      context.commit("setUser", await res.data);
+      context.commit("setUser", res[0]);
     },
   },
   modules: {},

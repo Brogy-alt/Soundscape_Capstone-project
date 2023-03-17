@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <span class="navbar-brand" style="padding-left: 20px">Virtuverse</span>
+    <span class="navbar-brand" style="padding-left: 20px"><img class="logo" src="../assets/Imgs//logo_transparent.png"><img/>Virtuverse</span>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -71,5 +71,10 @@ ul{
 
 .signup{
   text-decoration: none;
+}
+
+img{
+width: 4rem;
+padding-right: 10px;
 }
 </style>

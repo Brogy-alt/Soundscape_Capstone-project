@@ -1,6 +1,17 @@
 <template>
   <NavbarC />
-                <SpinnerC v-if="isSpinning" />
+                
+
+                <div class="container-fluid">
+                    
+                <img src="../assets/Imgs/profile.jpg" alt="profile placeholder" style="border-radius: 50%; border: 2px solid black;width: 100px;">
+
+                </div>
+                
+
+
+
+
                 <div>
                     
                     <p class="message m-2">{{ user?.firstName }}</p>
@@ -13,9 +24,8 @@
                     
                 </div>
 
-                <div class="login ms-auto pb-5">
-                    <p>Don't have an account?</p> <p href=""></p>
-                </div>
+                
+                
 <FooterC />
 </template>
 
@@ -23,27 +33,37 @@
 
 
 import NavbarC from '@/components/NavbarC.vue';
-import SpinnerC from '@/components/SpinnerC.vue';
+// import SpinnerC from '@/components/SpinnerC.vue';
 import FooterC from '@/components/FooterC.vue';
 
 
 export default {
 components:{
 FooterC,
-SpinnerC,
+// SpinnerC,
 NavbarC
 },
-
-created() {
-    setTimeout(() => {
-        this.isSpinning = false;
-    }, 3000);
-},
-computed: {
-    user(){
-        return this.$store.state.user
+mounted() {
+        this.$store.dispatch("fetchUser", this.$route.params.id);
+        console.log(this.$route.params.id);
+    },
+    created() {
+        setTimeout(() => {
+            this.isSpinning = false;
+        }, 3000);
+    },
+    data() {
+        return {
+            isSpinning: true,
+            searching: ""
+        }
+    },
+    computed: {
+       user() {
+            return this.$store.state.user;
+        }
     }
-  }
+
 }
 
 </script>

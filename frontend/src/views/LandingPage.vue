@@ -1,5 +1,7 @@
 <template>
+  
   <NavbarC />
+  <!-- home video -->
   <section class="home-vid">
 
     <div loading="lazy" class="video-container">
@@ -8,6 +10,7 @@
     </div>
   </section>
 
+  <!-- text heading section -->
   <section class="home">
 
     <div class="container">
@@ -26,11 +29,10 @@
         </div>
       </div>
     </div>
+  </section>
 
-    
-
-
-    
+<!-- cards section -->
+    <section id="cards">
     <div class="container">
       <div class="row">
         <div class="col-sm">
@@ -102,6 +104,8 @@ export default {
 }
 </script>
 <style scoped>
+
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -150,6 +154,10 @@ export default {
   z-index: 2;
 }
 
+.container{
+  padding-top: 10rem;
+}
+
 /* Center the container div */
 #container {
   display: flex;
@@ -159,6 +167,18 @@ export default {
 
 
 }
+/* about section text */
+@media screen and (max-width: 600px) {
+  .text-container {
+    padding: 10px;
+  }
+  
+  .text-container  {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+}
+
 
 /* h1 resposiveness */
 @media screen and (max-width: 700px) {

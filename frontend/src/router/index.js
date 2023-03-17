@@ -41,7 +41,7 @@ const routes = [
     path: '/display/:id',
     name: 'display',
     
-    component: () => import(/* webpackChunkName: "about" */ '../views/DisplayView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/SingleProductView.vue')
   },
   {
     path: '/signup',

@@ -34,17 +34,31 @@
     <SpinnerC v-if="isSpinning" />
 
     <div v-else>
-      <input type="text" placeholder="Search Category" v-model="searching">
+      
+      
+      <div>
+      <input type="text" class="rounded-2" style="padding-right: 
+      70px;" placeholder="Search Category" v-model="searching">
+      </div>
       <button @click.prevent="priceSort" class="btn btn-dark">Sort by price</button>
       <div class="row" style="justify-content: center;gap:1rem;">
         <div class="card" style="width: 18rem;" v-for="product in search" :key="product.id">
           <img :src="product.imgURL" class="card-img-top" alt="product img" style="height: 12rem;">
 
           <div class="card-body">
-            <h5 class="card-title">{{ product.prodName }}</h5>
-            <p class="card-text">{{ product.prodCategory }}</p>
-            <p class="card-text">R{{ product.prodPrice }}</p>
-            <router-link :to="{ name: 'display', params: { id: product.productID } }"><button v-if="this.$store.state.userAuth">View</button></router-link>
+           
+            <h6 class="card-title"> 
+             
+              <h5>Name : <br></h5> <b>{{ product.prodName }}</b></h6>
+
+            <h6 class="card-text">
+              <h5>Category : <br></h5> <b>{{ product.prodCategory }}</b></h6>
+
+            <h6 class="card-text">
+              <h5>Price: <br></h5> <b> R{{ product.prodPrice }}</b></h6>
+            <router-link :to="{ name: 'display', params: { id: product.productID } }"><button 
+              type="button" class="btn btn-dark" v-if="this.$store.state.userAuth">Show product</button></router-link>
+            
 
 
 

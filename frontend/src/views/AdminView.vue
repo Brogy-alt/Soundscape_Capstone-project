@@ -1,6 +1,7 @@
 <template >
     <NavbarC />
     <div>
+      <AddUser/>
       <div class="heading-users">
         <h2>Users table</h2>
         </div>
@@ -44,7 +45,7 @@
                 </tbody>
             </table>
         </div>
-
+        <AddProduct/>
         <h2 class="heading-products">Products table</h2>
         <SpinnerC v-if="isSpinning" />
 
@@ -92,15 +93,20 @@
 import NavbarC from '@/components/NavbarC.vue';
 import FooterC from '@/components/FooterC.vue';
 import SpinnerC from '@/components/SpinnerC.vue';
+import AddUser from '@/components/AddUser.vue';
+import AddProduct from '@/components/AddProduct.vue';
 import { useStore } from 'vuex';
 import { computed } from '@vue/runtime-core';
 import UpdateProduct from '@/components/UpdateProduct.vue';
+
 
 export default {
     components: {
         SpinnerC,
         FooterC,
         NavbarC,
+        AddUser,
+        AddProduct,
         UpdateProduct
     },
 
