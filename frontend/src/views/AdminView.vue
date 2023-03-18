@@ -79,7 +79,7 @@
                         <!-- <td><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Edit</button></td> -->
                         <td><UpdateProduct/></td>
                         <!-- delete button -->
-                        <td> <button type="button" class="btn btn-dark">Delete</button></td>
+                        <td> <button @click="deleteProduct(product.productID)" type="submit" class="btn btn-dark">Delete</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -130,6 +130,11 @@ export default {
         return {
             isSpinning: true
         }
+    }, 
+    methods: {
+      deleteProduct(id) {
+        this.$store.dispatch('deleteProduct', id)
+      }
     }
 }
 

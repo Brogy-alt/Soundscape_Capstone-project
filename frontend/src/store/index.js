@@ -112,6 +112,15 @@ export default createStore({
        context.commit("setProduct", results[0]);
       }
     },
+    async deleteProduct({commit, dispatch}, id) {
+      try {
+        await axios.delete(`${virtuverse}product/${id}`)
+        commit('setMessage', 'Product Deleted');
+        dispatch('fetchProducts');
+      } catch (error) {
+        commit('setMessage', 'Unable to delete product')
+      }
+    },
     async fetchUsers(context) {
       const res = await axios.get(`${virtuverse}users`);
       const { results } = await res.data;

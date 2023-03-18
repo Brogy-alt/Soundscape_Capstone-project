@@ -85,7 +85,7 @@ export default {
                 userPass: '',
                 userRole : '' ,
                 gender: '',
-                userProfile : '$2b$15$vCuU5dhC/SfmY4PXMQH75.0Wn9e3jmvdU4XHY18f2RcEc7/SVeexe'
+                userProfile : 'https://i.postimg.cc/pTLmhdpj/placeholder-person.jpg'
              
 
             }
