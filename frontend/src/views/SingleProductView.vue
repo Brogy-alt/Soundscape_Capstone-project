@@ -9,8 +9,6 @@
             <img :src="product?.imgURL" class="card-img-top" alt="product img" style="height: 14rem;">
             <div class="card-body">
                 <h5 class="card-title">{{ product?.prodName }}</h5>
-                <!-- <p class="card-text">{{ product?.prodCategory }}</p> -->
-                <!-- <p class="card-text">R{{ product?.prodPrice }}</p> -->
             </div> <p class="card-text">{{ product?.prodDescription }}</p>
         </div>
       </div>
@@ -31,15 +29,8 @@ export default {
         NavbarC,
         SpinnerC
     },
-    // setup() {
-    //     const store = useStore();
-    //     const product = computed(() => store.status.product)
-    //     const spinner = computed(() => store.status.setSpinner)
-    //     return {
-    //         product,
-    //         spinner
-    //     }
-    // },
+    
+    
     mounted() {
         this.$store.dispatch("fetchProduct", this.$route.params.id);
     },
@@ -51,7 +42,7 @@ export default {
     data() {
         return {
             isSpinning: true,
-            searching: ""
+            
         }
     },
     computed: {
@@ -59,6 +50,7 @@ export default {
             return this.$store.state.product;
         }
     }
+
 }
 </script>
 <style scoped>

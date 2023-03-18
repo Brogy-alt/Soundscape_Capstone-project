@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 import axios from "axios";
-import Cookies from "js-cookie";
+import {useCookies} from "vue3-cookies";
+const {cookies} = useCookies();
 const virtuverse = "https://virtuverse-capstone-project.onrender.com/";
 // render
 export default createStore({
@@ -56,7 +57,7 @@ export default createStore({
       if (result) {
         context.commit("setUser", result);
         context.commit('setToken', jwToken);
-        Cookies.set('user_cookie', jwToken)
+        cookies.set('user_cookie', jwToken)
         context.commit('setMessage', msg)
       } else {
         context.commit("setMessage", err);
@@ -134,6 +135,15 @@ export default createStore({
       console.log(await res.data);
       context.commit("setUser", res[0]);
     },
+    async deleteUser({commit, dispatch}, id) {
+      try {
+        await axios.delete(`${virtuverse}user/${id}`)
+        commit('setMessage', 'User Deleted');
+        dispatch('fetchUsers');
+      } catch (error) {
+        commit('setMessage', 'Unable to delete user')
+      }
   },
+},
   modules: {},
 })

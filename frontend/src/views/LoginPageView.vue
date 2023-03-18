@@ -4,6 +4,10 @@
 <section class="container">
             <div class="contact">
                 <h2 class="text-light">Contact us </h2>
+
+                
+            
+
                 <form @submit.prevent="login" ><br>
                     <div class="form-group">
                      
@@ -18,18 +22,22 @@
                         <button class="btn btn-dark" type="submit" @click.prevent="login">Login </button>
                     </div>
                     <br>
+
                     <SpinnerC v-if="isSpinning" />
-                    <div>
-                        <p class="message m-2">{{ message }} </p>
-                        <p class="message m-2">{{ user?.firstName }}</p>
-                        <p class="message m-2">{{ user?.lastName }}</p>
+                
+                    <div v-else>
+                        <p  class="message m-2" >{{ user?.firstName }} {{ user?.lastName }} {{ message }} </p>
+                        
                     </div>
 
                     <div class="login ms-auto pb-5">
                         <p>Don't have an account?</p> <a href="/signup">Sign up</a>
                     </div>
+                    
                 </form>
+                
             </div>
+        
 </section>
 
 
@@ -42,7 +50,6 @@
 import NavbarC from '@/components/NavbarC.vue';
 import SpinnerC from '@/components/SpinnerC.vue';
 // import FooterC from '@/components/FooterC.vue';
-
 
 export default {
     components:{

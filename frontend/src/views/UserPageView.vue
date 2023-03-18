@@ -7,11 +7,7 @@
                 <img src="../assets/Imgs/profile.jpg" alt="profile placeholder" style="border-radius: 50%; border: 2px solid black;width: 100px;">
 
                 </div>
-                
-
-
-
-
+ 
                 <div>
                     
                     <p class="message m-2">{{ user?.firstName }}</p>

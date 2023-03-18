@@ -37,7 +37,7 @@
                         <td><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Edit</button></td>
                         
                         <!-- delete button -->
-                        <td> <button type="button" class="btn btn-dark">Delete</button></td>
+                        <td> <button type="button" @click="deleteUser(user.userID)" class="btn btn-dark">Delete</button></td>
                         
 
                       
@@ -132,6 +132,9 @@ export default {
         }
     }, 
     methods: {
+      deleteUser(id) {
+        this.$store.dispatch('deleteUser', id)
+      },
       deleteProduct(id) {
         this.$store.dispatch('deleteProduct', id)
       }
