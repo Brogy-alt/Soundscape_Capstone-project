@@ -56,7 +56,7 @@ class User {
        })
     }
  fetchUsers(req, res) { 
-    const strQry = `SELECT firstName, lastName, cellphoneNumber, emailAdd, userPass, userRole, gender , userProfile 
+    const strQry = `SELECT userID, firstName, lastName, cellphoneNumber, emailAdd, userPass, userRole, gender , userProfile 
     FROM Users;`;
     db.query(strQry, (err, data)=>{
         if(err) throw err;
@@ -66,7 +66,7 @@ class User {
 }
 fetchUser(req, res) {
     
-    db.query(`SELECT firstName, lastName, cellphoneNumber, emailAdd, userPass, userRole, gender , userProfile  FROM Users WHERE userID = ?`,[req.params.id],
+    db.query(`SELECT userID, firstName, lastName, cellphoneNumber, emailAdd, userPass, userRole, gender , userProfile  FROM Users WHERE userID = ?`,[req.params.id],
         (err, data)=>{
         if(err) throw err;
         else res.status(200).json(
