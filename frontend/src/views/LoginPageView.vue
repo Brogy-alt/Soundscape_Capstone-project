@@ -134,10 +134,7 @@ input[type=number] {
     margin: 8px 0px;
     box-sizing: border-box;
 }
-/* input:hover[type=text] {
-    border: none;
-    border: 4px;
-} */
+
 textarea {
     width: 100%;
     height: 150px;
@@ -146,12 +143,7 @@ textarea {
     border-radius: 4px;
     resize: none;
 }
-/* textarea:hover {
-    border: none;
-    box-sizing: border-box;
-    border-radius: 4px;
-    
-} */
+
 .button{
     padding-bottom: 2rem;
 }

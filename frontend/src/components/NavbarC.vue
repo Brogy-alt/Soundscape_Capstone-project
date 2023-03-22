@@ -44,6 +44,15 @@
     <a class="account" href="/userpage">Account</a>
   </li>
   </ul>
+
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" >
+            <!-- sign in -->
+             <!-- links should be added -->
+    <a class="account" href="#">Cart</a>
+  </li>
+  </ul>
+
       </span>
     </div>
   </div>

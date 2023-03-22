@@ -3,8 +3,8 @@
         <NavbarC />
         <section class="container">
             <div class="contact">
-                <h2 class="text-light">Contact us </h2>
-                <form action="https://formspree.io/f/xbjbywjp" method="POST" ><br>
+                <h2 class="text-dark pt-4 pb-3">Contact us </h2>
+                <form @submit.prevent="userRegister"><br>
                     <div>
                         <label class="text-dark" for="#firstname" style="font-size:20px">Name</label>
                         <input id="firstname" name="firstName" type="text" placeholder="Enter your name" required>
@@ -96,5 +96,6 @@ textarea {
 .button{
     padding-bottom: 2rem;
 }
+
 
 </style>

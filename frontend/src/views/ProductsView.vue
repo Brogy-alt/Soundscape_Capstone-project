@@ -35,12 +35,14 @@
 
     <div v-else>
       
-      
-      <div>
-      <input type="text" class="rounded-2" style="padding-right: 
-      70px;" placeholder="Search Category" v-model="searching">
+      <div class="products pb-4">
+      <div class="input-group" style="width: 20%;">
+      <input type="search" class="form-control rounded" placeholder="Search Category" v-model="searching">
       </div>
-      <button @click.prevent="priceSort" class="btn btn-dark">Sort by price</button>
+      
+      <button @click.prevent="priceSort"  class="btn btn-dark">Sort by price</button>
+  
+    </div>
       <div class="row" style="justify-content: center;gap:1rem;">
         <div class="card" style="width: 18rem;" v-for="product in search" :key="product.id">
           <img :src="product.imgURL" class="card-img-top" alt="product img" style="height: 12rem;">
@@ -65,7 +67,9 @@
           </div>
         </div>
       </div>
-    </div>
+  
+
+  </div>
 
     <!-- this div must always be last -->
   </div>
@@ -111,7 +115,7 @@ export default {
     },
     search() {
       if (this.searching.trim().length > 0) {
-        return this.products.filter((input) => input.prodCategory.prodNatoLowerCase().includes(this.searching.trim()
+        return this.products.filter((input) => input.prodCategory.toLowerCase().includes(this.searching.trim()
           .toLowerCase()))
       }
       return this.products
@@ -132,5 +136,12 @@ img {
 
 .products-carousel {
   padding-bottom: 50px;
+}
+
+.products {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 </style>

@@ -23,12 +23,18 @@
               DISCOVER.
             </h1>
             <h1>
-              CREATE.</h1>
+              ENJOY.</h1>
           </div>
 
         </div>
       </div>
     </div>
+    
+  </section>
+
+  <section class="about-text">
+
+
   </section>
 
 <!-- cards section -->
@@ -156,14 +162,16 @@ export default {
 
 .container{
   padding-top: 10rem;
+  
 }
 
 /* Center the container div */
-#container {
+.home {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+
+
 
 
 }
