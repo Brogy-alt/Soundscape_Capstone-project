@@ -21,7 +21,7 @@
           <a class="nav-link" href="/contact">Contact</a>
         </li>
       </ul>
-      <span class="navbar-text" style="display:flex;">
+      <span class="navbar-text" style="display:flex; padding-left: 6rem">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <!-- sign up-->
@@ -49,7 +49,7 @@
           <li class="nav-item" >
             <!-- sign in -->
              <!-- links should be added -->
-    <a class="account" href="#">Cart</a>
+    <a class="account" href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
   </li>
   </ul>
 

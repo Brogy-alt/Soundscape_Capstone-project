@@ -2,18 +2,20 @@ import { createStore } from "vuex";
 import axios from "axios";
 import {useCookies} from "vue3-cookies";
 const {cookies} = useCookies();
+import router from "@/router";
 const virtuverse = "https://virtuverse-capstone-project.onrender.com/";
 // render
 export default createStore({
   state: {
     users: null,
     user: null,
-    userAuth: true,
+    // userAuth: true,
     products: null,
     product: null,
     token: null,
     showSpinner: null,
-    asc:true
+    asc:true,
+    data: {}
   },
   mutations: {
     setUsers(state, values) {
@@ -34,6 +36,9 @@ export default createStore({
     },
     setToken(state, value) {
       state.token = value
+    },
+    updateData(state, newData) {
+      state.data = newData
     },
     setMessage(state, message) {
       state.message = message;
@@ -59,6 +64,9 @@ export default createStore({
         context.commit('setToken', jwToken);
         cookies.set('user_cookie', jwToken)
         context.commit('setMessage', msg)
+        setTimeout(() => {
+          router.push({name: 'home'})
+        }), 3000
       } else {
         context.commit("setMessage", err);
       }
@@ -144,6 +152,10 @@ export default createStore({
         commit('setMessage', 'Unable to delete user')
       }
   },
+  async updateProduct({ commit }, updateProduct) {
+    const response = await axios.put(`${virtuverse}product`, updateProduct)
+    commit('updateProduct', response.data)
+  }
 },
   modules: {},
 })

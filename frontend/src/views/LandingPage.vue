@@ -6,8 +6,10 @@
 
     <div loading="lazy" class="video-container">
       <video autoplay muted loop id="myVideo" src="../assets/Videos/canvavideo1.mp4" type="video/mp4"></video>
-
     </div>
+      <img class="landing-img img-fluid" src="../assets/Imgs/Enter-the-Virtuverse.jpg" alt="background-img">
+
+    
   </section>
 
   <!-- text heading section -->
@@ -30,6 +32,25 @@
       </div>
     </div>
     
+  </section>
+
+  <section class="about-home">
+    <h2 class="about-heading">About Virtuverse</h2>
+
+    <div class="container text-center">
+  <div class="row align-items-center">
+    <div class="col">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aliquid. Nobis velit ea, sunt molestias dolorum asperiores architecto molestiae aspernatur consequuntur, libero a. Tempora nulla autem nostrum porro quasi iusto.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aliquid. Nobis velit ea, sunt molestias dolorum asperiores architecto molestiae aspernatur consequuntur, libero a. Tempora nulla autem nostrum porro quasi iusto.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aliquid. Nobis velit ea, sunt molestias dolorum asperiores architecto molestiae aspernatur consequuntur, libero a. Tempora nulla autem nostrum porro quasi iusto.
+    </div>
+    <div class="col">
+      <img src="" alt="">
+    </div>
+   
+  </div>
+</div>
+
   </section>
 
   <section class="about-text">
@@ -111,6 +132,11 @@ export default {
 </script>
 <style scoped>
 
+.about-home{
+  height: 100vh;
+  width: 100wv;
+  padding-top:1rem ;
+}
 
 .video-container {
   position: relative;
@@ -160,21 +186,22 @@ export default {
   z-index: 2;
 }
 
-.container{
-  padding-top: 10rem;
-  
-}
+
 
 /* Center the container div */
 .home {
   display: flex;
   justify-content: center;
   align-items: center;
-
-
-
-
 }
+
+.bg-image{
+  transition: transform .2s; /* Animation */
+}
+.bg-image:hover {
+  transform: scale(1.0); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
 /* about section text */
 @media screen and (max-width: 600px) {
   .text-container {
@@ -223,6 +250,27 @@ export default {
   }
 }
 
-/* h1 height responsiveness */
+  /* video */
+  @media screen and (max-width: 600px) {
+  .video-container, video {
+
+  display: none;
+    }
+  }
+
+  @media screen and (min-width:600px){
+  .landing-img{
+    display: none;
+
+    }
+  }
+
+  @media screen and (max-width:600px){
+  .landing-img{
+    display: block;
+
+    }
+  } 
+
 </style>
 

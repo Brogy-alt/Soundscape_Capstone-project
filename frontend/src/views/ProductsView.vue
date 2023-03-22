@@ -3,7 +3,6 @@
 
   <div>
 
-
     <section class="products-carousel">
 
       <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -34,8 +33,15 @@
     <SpinnerC v-if="isSpinning" />
 
     <div v-else>
-      
-      <div class="products pb-4">
+    <div class="products pb-4">
+    <select required v-model="prodType"> 
+    <option value="" selected>All categories</option>
+    <option value="Gaming">Gaming</option>
+    <option value="Production" >Production</option>
+    <option value="Medical">Medical</option>
+    <option value="Architecture and design">Architecture and design</option>
+    </select>
+
       <div class="input-group" style="width: 20%;">
       <input type="search" class="form-control rounded" placeholder="Search Category" v-model="searching">
       </div>
@@ -106,7 +112,9 @@ export default {
   data() {
     return {
       isSpinning: true,
-      searching: ""
+      searching: "",
+      prodType: ""
+
     }
   },
   computed: {
@@ -114,12 +122,11 @@ export default {
       return this.$store.state.products;
     },
     search() {
+      let filteredBytype = this.products.filter(item => item.prodType == this.prodType || this.prodType == '')
       if (this.searching.trim().length > 0) {
-        return this.products.filter((input) => input.prodCategory.toLowerCase().includes(this.searching.trim()
-          .toLowerCase()))
-      }
-      return this.products
-    }
+        return filteredBytype
+      }   return filteredBytype.filter((input) => input.prodCategory.toLowerCase().includes(this.searching.trim().toLowerCase()))
+        }
   },
 }
 
