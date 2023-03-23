@@ -38,8 +38,18 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/LoginPageView.vue')
   },
   {
-    path: '/display/:id',
-    name: 'display',
+    path: '/logout',
+    name: 'logout',
+    beforeEnter () {
+      router.push({name: 'login'})
+      localStorage.removeItem('login_token')
+      localStorage.removeItem('user')
+      window.local.reload()
+    }
+  },
+  {
+    path: '/singleproduct/:id',
+    name: 'singleproduct',
     
     component: () => import(/* webpackChunkName: "about" */ '../views/SingleProductView.vue')
   },
@@ -54,6 +64,12 @@ const routes = [
     name: 'userpage',
     
     component: () => import(/* webpackChunkName: "about" */ '../views/UserPageView.vue')
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    
+    component: () => import(/* webpackChunkName: "about" */ '../views/CartView.vue')
   }
 ]
 

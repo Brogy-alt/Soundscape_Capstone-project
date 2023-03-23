@@ -33,49 +33,55 @@
     <SpinnerC v-if="isSpinning" />
 
     <div v-else>
-    <div class="products pb-4">
-    <select required v-model="prodType"> 
-    <option value="" selected>All categories</option>
-    <option value="Gaming">Gaming</option>
-    <option value="Production" >Production</option>
-    <option value="Medical">Medical</option>
-    <option value="Architecture and design">Architecture and design</option>
-    </select>
+      <div class="products pb-4">
+        <select required v-model="prodType">
+          <option value="" selected>All categories</option>
+          <option value="Gaming">Gaming</option>
+          <option value="Production">Production</option>
+          <option value="Medical">Medical</option>
+          <option value="Architecture and design">Architecture and design</option>
+        </select>
 
-      <div class="input-group" style="width: 20%;">
-      <input type="search" class="form-control rounded" placeholder="Search Category" v-model="searching">
+        <div class="input-group" style="width: 20%;">
+          <input type="search" class="form-control rounded" placeholder="Search Category" v-model="searching">
+        </div>
+
+        <button @click.prevent="priceSort" class="btn btn-dark">Sort by price</button>
+
       </div>
-      
-      <button @click.prevent="priceSort"  class="btn btn-dark">Sort by price</button>
-  
-    </div>
       <div class="row" style="justify-content: center;gap:1rem;">
         <div class="card" style="width: 18rem;" v-for="product in search" :key="product.id">
           <img :src="product.imgURL" class="card-img-top" alt="product img" style="height: 12rem;">
 
           <div class="card-body">
-           
-            <h6 class="card-title"> 
-             
-              <h5>Name : <br></h5> <b>{{ product.prodName }}</b></h6>
+
+            <h6 class="card-title">
+
+              <h5>Name : <br></h5> <b>{{ product.prodName }}</b>
+            </h6>
 
             <h6 class="card-text">
-              <h5>Category : <br></h5> <b>{{ product.prodCategory }}</b></h6>
+              <h5>Category : <br></h5> <b>{{ product.prodCategory }}</b>
+            </h6>
 
             <h6 class="card-text">
-              <h5>Price: <br></h5> <b> R{{ product.prodPrice }}</b></h6>
-            <router-link :to="{ name: 'display', params: { id: product.productID } }"><button 
-              type="button" class="btn btn-dark" v-if="this.$store.state.userAuth">Show product</button></router-link>
-            
+              <h5>Price: <br></h5> <b> R{{ product.prodPrice }}</b>
+            </h6>
+            <router-link :to="{ name: 'singleproduct', params: { id: product.productID } }"><button type="button"
+                class="btn btn-dark" v-if="this.$store.state.userAuth">Show product</button>
+
+              
+            </router-link>
+
 
 
 
           </div>
         </div>
       </div>
-  
 
-  </div>
+
+    </div>
 
     <!-- this div must always be last -->
   </div>
@@ -124,10 +130,11 @@ export default {
     search() {
       let filteredBytype = this.products.filter(item => item.prodType == this.prodType || this.prodType == '')
       if (this.searching.trim().length > 0) {
-        return filteredBytype
-      }   return filteredBytype.filter((input) => input.prodCategory.toLowerCase().includes(this.searching.trim().toLowerCase()))
-        }
-  },
+        return filteredBytype.filter((input) => input.prodCategory.toLowerCase().includes(this.searching.trim().toLowerCase()))
+      }
+      return filteredBytype
+    }
+  }
 }
 
 </script>

@@ -4,19 +4,18 @@
 
                 <div class="container-fluid">
                     
-                <img src="../assets/Imgs/profile.jpg" alt="profile placeholder" style="border-radius: 50%; border: 2px solid black;width: 100px;">
+                <img :src="$store.state.user?.userProfile" alt="profile placeholder" style="border-radius: 50%; border: 2px solid black;width: 100px;">
 
                 </div>
  
                 <div>
-                    
-                    <p class="message m-2">{{ user?.firstName }}</p>
-                    <p class="message m-2">{{ user?.lastName }}</p>
-                    <p class="message m-2">{{ user?.cellphoneNumber }} </p>
-                    <p class="message m-2">{{ user?.emailAdd }} </p>
-                    <p class="message m-2">{{ user?.userRole }} </p>
-                    <p class="message m-2">{{ user?.gender }} </p>
-                    <p class="message m-2">{{ user?.userProfile}} </p>
+                    <p class="message m-2">{{ $store.state.user?.firstName }}</p>
+                    <p class="message m-2">{{ $store.state.user?.lastName }}</p>
+                    <p class="message m-2">{{ $store.state.user?.cellphoneNumber }} </p>
+                    <p class="message m-2">{{ $store.state.user?.emailAdd }} </p>
+                    <p class="message m-2">{{ $store.state.user?.userRole }} </p>
+                    <p class="message m-2">{{ $store.state.user?.gender }} </p>
+                 
                     
                 </div>
 
@@ -31,36 +30,50 @@
 import NavbarC from '@/components/NavbarC.vue';
 // import SpinnerC from '@/components/SpinnerC.vue';
 import FooterC from '@/components/FooterC.vue';
-
+import { onMounted } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
 components:{
 FooterC,
 // SpinnerC,
 NavbarC
+
 },
-mounted() {
-        this.$store.dispatch("fetchUser", this.$route.params.id);
-        console.log(this.$route.params.id);
-    },
-    created() {
-        setTimeout(() => {
-            this.isSpinning = false;
-        }, 3000);
-    },
-    data() {
-        return {
-            isSpinning: true,
-            searching: ""
-        }
-    },
-    computed: {
-       user() {
-            return this.$store.state.user;
-        }
-    }
+setup() {
+    const store = useStore()
+
+    onMounted(async () => {
+        await store.dispatch('fetchUser')
+    })
+}
+
+
+
 
 }
+// mounted() {
+//         this.$store.dispatch("fetchUser", this.$route.params.id);
+//         console.log(this.$route.params.id);
+//     },
+//     created() {
+//         setTimeout(() => {
+//             this.isSpinning = false;
+//         }, 3000);
+//     },
+//     data() {
+//         return {
+//             isSpinning: true,
+//             searching: ""
+//         }
+//     },
+//     computed: {
+//        user() {
+//             return this.$store.state.user;
+//         }
+//     }
+
+// }
 
 </script>
 <style scoped>

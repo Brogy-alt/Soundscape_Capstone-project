@@ -79,7 +79,7 @@ export default {
               cellphoneNumber : '',
               emailAdd: '',
               userPass: '',
-              userRole : '' ,
+              userRole : 'User' ,
               gender: '',
               userProfile : 'https://i.postimg.cc/pTLmhdpj/placeholder-person.jpg'
            

@@ -34,33 +34,18 @@
     
   </section>
 
-  <section class="about-home">
-    <h2 class="about-heading">About Virtuverse</h2>
+<!-- about section -->
+<section class="about bg-primary-subtle" style="height: 100vh; width: 100vw;">
+  <h2> #</h2>
+</section>
 
-    <div class="container text-center">
-  <div class="row align-items-center">
-    <div class="col">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aliquid. Nobis velit ea, sunt molestias dolorum asperiores architecto molestiae aspernatur consequuntur, libero a. Tempora nulla autem nostrum porro quasi iusto.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aliquid. Nobis velit ea, sunt molestias dolorum asperiores architecto molestiae aspernatur consequuntur, libero a. Tempora nulla autem nostrum porro quasi iusto.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aliquid. Nobis velit ea, sunt molestias dolorum asperiores architecto molestiae aspernatur consequuntur, libero a. Tempora nulla autem nostrum porro quasi iusto.
-    </div>
-    <div class="col">
-      <img src="" alt="">
-    </div>
-   
-  </div>
-</div>
-
-  </section>
-
-  <section class="about-text">
-
-
-  </section>
 
 <!-- cards section -->
-    <section id="cards">
+    <section id="cards" style="padding-top: 5rem;">
     <div class="container">
+      <div class="heading-product">
+        <h2>Products</h2>
+      </div>
       <div class="row">
         <div class="col-sm">
           <div class="card">
@@ -195,12 +180,7 @@ export default {
   align-items: center;
 }
 
-.bg-image{
-  transition: transform .2s; /* Animation */
-}
-.bg-image:hover {
-  transform: scale(1.0); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
+
 
 /* about section text */
 @media screen and (max-width: 600px) {
@@ -219,6 +199,7 @@ export default {
 @media screen and (max-width: 700px) {
   .flex h1 {
     font-size: 40px;
+    gap: 10rem !important;
   }
 }
 
@@ -232,21 +213,21 @@ export default {
 @media screen and (max-width: 500px) {
   .flex h1 {
     font-size: 40px;
-    gap: 10rem !important;
+    gap: 7rem !important;
   }
 }
 
 @media screen and (max-width: 400px) {
   .flex h1 {
-    font-size: 40px;
-    gap: 10rem !important;
+    font-size: 30px;
+    gap: 6rem !important;
   }
 }
 
 @media screen and (max-width: 300px) {
   .flex h1 {
-    font-size: 40px;
-    gap: 10rem !important;
+    font-size: 30px;
+    gap: 5rem !important;
   }
 }
 

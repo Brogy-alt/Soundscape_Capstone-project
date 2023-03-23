@@ -2,6 +2,11 @@
       <NavbarC />
 
 <section class="container">
+
+    <div class="account-heading pt-4 pb-3 ">
+      <h2>Login</h2>
+    </div>
+
             <div class="contact">
                 <h2 class="text-light">Contact us </h2>
 

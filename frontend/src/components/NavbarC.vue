@@ -21,7 +21,7 @@
           <a class="nav-link" href="/contact">Contact</a>
         </li>
       </ul>
-      <span class="navbar-text" style="display:flex; padding-left: 6rem">
+      <span class="navbar-text" style="display:flex;">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <!-- sign up-->
@@ -36,6 +36,15 @@
     <a class="login" href="/login">Login</a>
   </li>
   </ul>
+  <router-link :to="{name: 'logout'}">
+      
+        <button>
+            Logout
+        </button>
+   
+   
+    
+  </router-link>
 
   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item" >
@@ -49,9 +58,10 @@
           <li class="nav-item" >
             <!-- sign in -->
              <!-- links should be added -->
-    <a class="account" href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+    <a class="account" href="/cart"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
   </li>
   </ul>
+  
 
       </span>
     </div>
@@ -86,4 +96,14 @@ img{
 width: 4rem;
 padding-right: 10px;
 }
+
+
+
+@media(max-width: 900px) {
+  .navbar-text {
+    display:flex;
+   padding-left: 40px;
+  }
+}
+
 </style>
