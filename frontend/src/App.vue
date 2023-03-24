@@ -24,4 +24,11 @@
   --bs-gutter-x:0 !important;
 }
 
+p{
+ font-size: 18px; 
+}
+
+h2{
+  font-size: 35px; 
+}
 </style>

@@ -38,6 +38,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/LoginPageView.vue')
   },
   {
+    path: '/checkout',
+    name: 'checkout',
+    
+    component: () => import(/* webpackChunkName: "about" */ '../views/CheckoutView.vue')
+  },
+  {
     path: '/logout',
     name: 'logout',
     beforeEnter () {
@@ -45,6 +51,7 @@ const routes = [
       localStorage.removeItem('login_token')
       localStorage.removeItem('user')
       window.local.reload()
+      alert ('logged out')
     }
   },
   {

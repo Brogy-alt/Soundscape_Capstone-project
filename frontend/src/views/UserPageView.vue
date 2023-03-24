@@ -1,27 +1,69 @@
 <template>
-  <NavbarC />
-                
+    <NavbarC />
 
-                <div class="container-fluid">
-                    
-                <img :src="$store.state.user?.userProfile" alt="profile placeholder" style="border-radius: 50%; border: 2px solid black;width: 100px;">
+    <div class="acccount pt-4 pb-5">
+        <h2>Your account</h2>
+    </div>
+
+
+    <div class="container-fluid ">
+        <div class="row align-items-center">
+            <div class="col-sm-6 ">
+
+
+                <div class="pb-5">
+                    <img class="user" :src="$store.state.user?.userProfile" alt="profile placeholder"
+                        style="border-radius: 50%; border: 2px solid black;">
 
                 </div>
- 
+
+
+            </div>
+
+            <div class="col-sm-6">
+
                 <div>
+                    <h5 class="account-heading pt3 pb-1">
+                        Firstname:
+                    </h5>
                     <p class="message m-2">{{ $store.state.user?.firstName }}</p>
+
+                    <h5 class="account-heading pt3 pb-1">
+                        Lastname:
+                    </h5>
                     <p class="message m-2">{{ $store.state.user?.lastName }}</p>
+
+                    <h5 class="account-heading pt3 pb-1">
+                        CellphoneNumber :
+                    </h5>
+
                     <p class="message m-2">{{ $store.state.user?.cellphoneNumber }} </p>
+
+                    <h5 class="account-heading pt3 pb-1">
+                        EmailAdd :
+                    </h5>
+
                     <p class="message m-2">{{ $store.state.user?.emailAdd }} </p>
-                    <p class="message m-2">{{ $store.state.user?.userRole }} </p>
+
+                    <h5 class="account-heading pt3 pb-1">
+                        Gender :
+                    </h5>
+
                     <p class="message m-2">{{ $store.state.user?.gender }} </p>
-                 
-                    
+
+
                 </div>
 
-                
-                
-<FooterC />
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <FooterC />
 </template>
 
 <script>
@@ -34,116 +76,42 @@ import { onMounted } from 'vue';
 import { useStore } from 'vuex';
 
 export default {
-components:{
-FooterC,
-// SpinnerC,
-NavbarC
+    components: {
+        FooterC,
+        // SpinnerC,
+        NavbarC
 
-},
-setup() {
-    const store = useStore()
+    },
+    setup() {
+        const store = useStore()
 
-    onMounted(async () => {
-        await store.dispatch('fetchUser')
-    })
+        onMounted(async () => {
+            await store.dispatch('fetchUser')
+        })
+    }
+
+
+
+
 }
 
-
-
-
-}
-// mounted() {
-//         this.$store.dispatch("fetchUser", this.$route.params.id);
-//         console.log(this.$route.params.id);
-//     },
-//     created() {
-//         setTimeout(() => {
-//             this.isSpinning = false;
-//         }, 3000);
-//     },
-//     data() {
-//         return {
-//             isSpinning: true,
-//             searching: ""
-//         }
-//     },
-//     computed: {
-//        user() {
-//             return this.$store.state.user;
-//         }
-//     }
-
-// }
 
 </script>
 <style scoped>
-
-.login-form{
-/* height: 100vh; */
-width:100vw;
-border:3px solid black;
-}
-
-form{
-margin: auto;
-align-content: center;
-align-items: center;
+.account-heading {
+    font: bolder;
 
 }
 
-
-.container {
-margin-top: 70px;
-justify-content: center;
-align-items: center;
-height: 50vh; 
-text-align: center;
-}
-
-.contact{
-padding: 1rem;
-}
-input[type=submit] {
-color: rgb(255, 255, 255);
-background-color: #808080;
-padding: 12px 20px;
-border: none;
-border-radius: 4px;
-}
-input[type=text] {
-width: 100%;
-padding: 10px 20px;
-margin: 8px 0px;
-box-sizing: border-box;
-}
-input[type=number] {
-width: 100%;
-padding: 10px 20px;
-margin: 8px 0px;
-box-sizing: border-box;
-}
-/* input:hover[type=text] {
-border: none;
-border: 4px;
-} */
-textarea {
-width: 100%;
-height: 150px;
-padding: 12px 20px;
-box-sizing: border-box;
-border-radius: 4px;
-resize: none;
-}
-/* textarea:hover {
-border: none;
-box-sizing: border-box;
-border-radius: 4px;
-
-} */
-.button{
-padding-bottom: 2rem;
-}
+.user{
+    width: 320px;
 
 
+}
 
+@media screen and (max-width: 300px) {
+    .user {
+        width: 100px !important;
+  }
+}
 </style>

@@ -30,9 +30,11 @@
       </div>
     </section>
 
-    <SpinnerC v-if="isSpinning" />
+    
 
-    <div v-else>
+      <div class="container text-center" >
+  <div class="row">
+    <div class="col-sm-4 col-md-6">
       <div class="products pb-4">
         <select required v-model="prodType">
           <option value="" selected>All categories</option>
@@ -41,14 +43,31 @@
           <option value="Medical">Medical</option>
           <option value="Architecture and design">Architecture and design</option>
         </select>
+    </div>
 
-        <div class="input-group" style="width: 20%;">
+    <div class="col-sm-4 offset-sm-2 col-md-6 offset-md-0 pb-4 " style="display:flex;justify-content: center;">
+      
+      <div class="input-group-search" style="margin: auto;position: relative;left:32.1rem;">
           <input type="search" class="form-control rounded" placeholder="Search Category" v-model="searching">
         </div>
+      </div>
+  </div>
 
-        <button @click.prevent="priceSort" class="btn btn-dark">Sort by price</button>
+  <div class="col-sm-4 offset-sm-2 col-md-6 offset-md-0 pb-4">
+      
+    <button @click.prevent="priceSort" class="btn btn-dark">Sort by price</button>
+      </div>
+  </div>
+
+      
+
+
+       
 
       </div>
+      <SpinnerC v-if="isSpinning" />
+
+    <div v-else >
       <div class="row" style="justify-content: center;gap:1rem;">
         <div class="card" style="width: 18rem;" v-for="product in search" :key="product.id">
           <img :src="product.imgURL" class="card-img-top" alt="product img" style="height: 12rem;">
@@ -70,7 +89,6 @@
             <router-link :to="{ name: 'singleproduct', params: { id: product.productID } }"><button type="button"
                 class="btn btn-dark" v-if="this.$store.state.userAuth">Show product</button>
 
-              
             </router-link>
 
 
@@ -158,4 +176,16 @@ img {
   justify-content: center;
   gap: 2rem;
 }
+
+@media screen and (max-width: 300px) {
+  .input-group-search {
+    margin: 0 !important;
+    position: relative;left:0 !important;
+
+
+   
+  }
+}
+
+
 </style>

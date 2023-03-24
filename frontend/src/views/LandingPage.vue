@@ -1,5 +1,4 @@
 <template>
-  
   <NavbarC />
   <!-- home video -->
   <section class="home-vid">
@@ -7,9 +6,9 @@
     <div loading="lazy" class="video-container">
       <video autoplay muted loop id="myVideo" src="../assets/Videos/canvavideo1.mp4" type="video/mp4"></video>
     </div>
-      <img class="landing-img img-fluid" src="../assets/Imgs/Enter-the-Virtuverse.jpg" alt="background-img">
+    <img class="landing-img img-fluid" src="../assets/Imgs/Enter-the-Virtuverse.jpg" alt="background-img">
 
-    
+
   </section>
 
   <!-- text heading section -->
@@ -31,35 +30,81 @@
         </div>
       </div>
     </div>
-    
+
   </section>
 
-<!-- about section -->
-<section class="about bg-primary-subtle" style="height: 100vh; width: 100vw;">
-  <h2> #</h2>
-</section>
+  <!-- about section -->
+  <section class="about">
+
+    <h2 class="about-heading pt-4 text-light">About Virtuverse</h2>
+
+    <div class="about-content">
+
+      <div class="container text-light">
+        <div class="row align-items-center">
+          <div class="col-sm-6 text-start">
+
+            <img class="img-fluid" style="height: 20rem; width: 25rem;" src="../assets/Imgs/logo_transparent.png"
+              alt="img">
 
 
-<!-- cards section -->
-    <section id="cards" style="padding-top: 5rem;">
+          </div>
+
+          <div class="col-sm-6">
+            <div class="about-p">
+             Welcome to our company, a leading provider of cutting-edge VR products designed to
+              revolutionize the way people experience immersive entertainment, education, and training.<br>
+
+             We are dedicated to creating high-quality VR products that offer unparalleled levels of immersion,
+              interactivity, and realism. Our product line includes state-of-the-art VR headsets, controllers, and
+              accessories that provide users with a truly immersive experience that transports them to new worlds and
+              enables them to interact with virtual environments in ways that were previously impossible.<br><br>
+
+              Our VR products are perfect for a wide range of applications, from gaming and entertainment to education and
+              training. They are designed to provide users with an incredibly lifelike experience that allows them to
+              explore new worlds, learn new skills, and have fun in ways that were previously unimaginable.<br><br>
+
+            At our company, we are committed to innovation and constantly striving to push the boundaries of what is
+              possible with VR technology. Our team of experts is dedicated to designing and developing the best VR
+              products on the market, and we are proud to offer our customers a truly unique and unforgettable experience.<br><br>
+
+            Whether you are a gamer, educator, or training professional, our VR products are sure to exceed your
+              expectations and provide you with an unparalleled level of immersion and interactivity. Join us on our
+              journey as we continue to push the boundaries of what is possible with VR technology.
+
+
+
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- cards section -->
+  <section id="cards" style="padding-top: 5rem;">
     <div class="container">
       <div class="heading-product">
-        <h2>Products</h2>
+        <h2 class="products pb-4">Products</h2>
       </div>
-      <div class="row">
+      <div class="row"  style="gap:2rem">
         <div class="col-sm">
           <div class="card">
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
+              <img src="https://i.postimg.cc/tTwdky11/Oculus-Quest-2.jpg" class="img-fluid" />
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              <h5 class="card-title">Oculus Quest 2</h5>
+              <p class="card-text">he Oculus Quest 2 is a powerful and versatile VR headset that provides a high-quality immersive experience for users. Its standalone design and inside-out tracking make it easy to use and set up, while its powerful hardware and large library of VR games and applications.
                 content.</p>
-              <a href="#!" class="btn btn-primary">Button</a>
+              <a href="#!" class="btn btn-dark">Purchase</a>
             </div>
           </div>
         </div>
@@ -67,34 +112,35 @@
         <div class="col-sm">
           <div class="card">
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
+              <img src="https://i.postimg.cc/6QSnV7hN/HTC_Vive_Cosmos_Elite.jpg" class="img-fluid" />
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              <h5 class="card-title">HTC Vive Cosmos Elite</h5>
+              <p class="card-text">Overall, the HTC Vive Cosmos Elite has high-resolution display, wide field of view, advanced audio and tracking technologies, and comfortable design make it a great choice for VR gaming, simulation, and other applications that require a high level of immersion and precision.
                 content.</p>
-              <a href="#!" class="btn btn-primary">Button</a>
+              <a href="/products" class="btn btn-dark">Purchase</a>
             </div>
           </div>
         </div>
 
         <div class="col-sm">
           <div class="card">
-  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid"/>
-    <a href="#!">
-      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-    </a>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#!" class="btn btn-primary">Button</a>
-  </div>
-</div>
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="https://i.postimg.cc/qq66QZSj/Valve-Index.jpg" class="img-fluid" />
+              <a href="/products">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Valve Index</h5>
+              <p class="card-text">The Valve Index is a high-quality VR headset designed for architectures who have the digital skills to create designs with VR. Its high-resolution display, wide field of view, advanced audio and tracking technologies, and comfortable design making it great for architecture.
+              </p>
+              <a href="/products" class="btn btn-dark">Purchase</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -116,11 +162,10 @@ export default {
 }
 </script>
 <style scoped>
-
-.about-home{
+.about-home {
   height: 100vh;
   width: 100wv;
-  padding-top:1rem ;
+  padding-top: 1rem;
 }
 
 .video-container {
@@ -180,6 +225,38 @@ export default {
   align-items: center;
 }
 
+.about {
+  background: #8E2DE2;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3a03a9, #903dda);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #321076, rgb(70, 17, 116));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+
+}
+
+.about-content {
+  align-items: center;
+  align-content: center;
+  padding-top: 1rem;
+}
+
+.about p {
+  justify-content: center;
+  padding: 11rem;
+
+}
+
+.about-p {
+  padding: 50px !important;
+  word-wrap: break-word;
+}
+
+#cards {
+  height: 100vh;
+}
+
 
 
 /* about section text */
@@ -187,8 +264,8 @@ export default {
   .text-container {
     padding: 10px;
   }
-  
-  .text-container  {
+
+  .text-container {
     font-size: 1rem;
     line-height: 1.2;
   }
@@ -231,27 +308,45 @@ export default {
   }
 }
 
-  /* video */
-  @media screen and (max-width: 600px) {
-  .video-container, video {
+/* video */
+@media screen and (max-width: 600px) {
 
-  display: none;
-    }
+  .video-container,
+  video {
+
+    display: none;
   }
+}
 
-  @media screen and (min-width:600px){
-  .landing-img{
+@media screen and (min-width:600px) {
+  .landing-img {
     display: none;
 
-    }
   }
+}
 
-  @media screen and (max-width:600px){
-  .landing-img{
+@media screen and (max-width:600px) {
+  .landing-img {
     display: block;
 
-    }
-  } 
+  }
+}
 
-</style>
+@media screen and (max-width:300px) {
+  .about {
+    height: 100%
+  }
+}
+
+@media screen and (max-width:600px) {
+  .about {
+    height: 100%
+  }
+}
+
+@media screen and (max-width:900px) {
+  .about {
+    height: 100%
+  }
+}</style>
 

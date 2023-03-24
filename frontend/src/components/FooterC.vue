@@ -23,7 +23,7 @@
 
                 <div class=" m-0 pb-2" id="copyright">
 
-                    Virtuverse Copyright © 2023 Virtuverse - All rights reserved || Designed By: Brogan Gys
+                    Virtuverse Copyright © {{ CurrentYear }} Virtuverse - All rights reserved || Designed By: Brogan Gys
                 </div>
             </div>
         </footer>
@@ -31,7 +31,11 @@
 </template>
 <script>
 export default {
-
+    data(){
+        return {
+            CurrentYear: new Date().getFullYear()
+        }
+    }
 }
 </script>
 <style scoped>
