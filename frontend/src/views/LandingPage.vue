@@ -114,6 +114,7 @@
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
               <img src="https://i.postimg.cc/6QSnV7hN/HTC_Vive_Cosmos_Elite.jpg" class="img-fluid" />
               <a href="#!">
+  +
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
             </div>
@@ -147,16 +148,16 @@
 
   </section>
 
-  <FooterC />
+  
 </template>
 <script>
 import NavbarC from '@/components/NavbarC.vue';
-import FooterC from '@/components/FooterC.vue';
+// import FooterC from '@/components/FooterC.vue';
 
 export default {
   components: {
     NavbarC,
-    FooterC,
+    // FooterC,
 
   }
 }
