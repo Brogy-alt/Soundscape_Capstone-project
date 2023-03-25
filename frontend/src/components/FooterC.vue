@@ -4,10 +4,10 @@
             <div class="footer">
                 <div class="row">
                     <ul class="icons">
-                        <li><a href="#"><i id="facebook" class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i id="ig" class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i id="yt" class="fa fa-youtube"></i></a></li>
-                        <li><a href="#"><i id="twitter" class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/index.php"><i id="facebook" class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/?__coig_restricted=1"><i id="ig" class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/"><i id="yt" class="fa fa-youtube"></i></a></li>
+                        <li><a href="https://twitter.com/?lang=en-za"><i id="twitter" class="fa fa-twitter"></i></a></li>
                     </ul>
                 </div>
 
