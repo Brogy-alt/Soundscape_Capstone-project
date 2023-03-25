@@ -219,36 +219,49 @@ export default createStore({
       }
     },
   },
-  
-  async addCart(context, id) {
-    try {
-      const res = await axios.post(`${virtuverse}user/${id}/cart`);
-      console.log("Result:", res);
-      const { result, message, err } = await res.data;
-      if (result) {
-        context.commit("setProduct", result);
-        context.commit("setMessage", message);
-      } else {
-        context.commit("setMessage", err);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  },
+  // cart
   async getCart(context, id) {
-    try {
-      const res = await axios.post(`${virtuverse}user/${id}/carts`);
-      console.log("Result:", res);
-      const { result, message, err } = await res.data;
-      if (result) {
-        context.commit("setProduct", result);
-        context.commit("setMessage", message);
+      const res = await axios.get(`${virtuverse}user/${id}/carts`);
+      context.commit('setCart', res.data)
+      console.log(id);
+    },
+    async addCart(context, {payload}) {
+      console.log(payload);
+      let userID = localStorage.getItem('userID')
+      const {res, message} = await axios.post(`${virtuverse}user/${userID}/cart`, payload);
+      if (res) {
+        context.commit('setCart', res.data)        
       } else {
-        context.commit("setMessage", err);
+        context.commit('setMessage', message)
       }
-    } catch (error) {
-      console.error(error);
-    }
-  },
+    },
+    async updateCart(context, id) {
+      const res = await axios.put(`${virtuverse}/user/${id}cart/${id}`);
+      let {results, err} = await res.data
+      if (results) {
+        context.commit('setCart', results)        
+      } else {
+        context.commit('setMessage', err)
+      }
+    },
+    async deleteCarts({ commit, dispatch }, id) {
+      try {
+        await axios.delete(`${virtuverse}/user/${id}/cart`);
+        commit('setMessage', 'Carts deleted successfully');
+        dispatch('getCart');
+      } catch (error) {
+        commit('setMessage', 'Failed to delete carts');
+      } 
+    },
+    async deleteCart({ commit, dispatch }, id) {
+      try {
+        await axios.delete(`${virtuverse}/user/${id}/cart/${id}`);
+        commit('setMessage', 'Cart deleted successfully');
+        dispatch('getCart');
+      } catch (error) {
+        commit('setMessage', 'Failed to delete cart');
+      } 
+    },
+
   modules: {},
 });

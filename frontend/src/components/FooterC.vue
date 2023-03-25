@@ -4,10 +4,10 @@
             <div class="footer">
                 <div class="row">
                     <ul class="icons">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i id="facebook" class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i id="ig" class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i id="yt" class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i id="twitter" class="fa fa-twitter"></i></a></li>
                     </ul>
                 </div>
 
@@ -42,6 +42,29 @@ export default {
 /* .footer{
   font-size: larger;
 } */
+
+
+#facebook:hover{
+  transform: scale(1.1);
+  transition: all ease 500ms;
+}
+
+#ig:hover{
+  transform: scale(1.1);
+  transition: all ease 500ms;
+}
+
+#yt:hover{
+  transform: scale(1.1);
+  transition: all ease 500ms;
+}
+
+
+#twitter:hover{
+  transform: scale(1.1);
+  transition: all ease 500ms;
+}
+
 .footer {
     background: #ffffff71;
     padding: 40px 0px;

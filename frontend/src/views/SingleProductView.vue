@@ -4,7 +4,7 @@
         <SpinnerC v-if="isSpinning" />
 
     <div v-else>
-      <div class="row" style="justify-content: center;gap:1rem;">  
+      <div class="row" style="justify-content: center;gap:1rem; padding-top: 2rem;">  
         <div class="card" style="width: 22rem;">
             <img :src="product?.imgURL" class="card-img-top" alt="product img" style="height: 14rem;">
             <div class="card-body">

@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <span class="navbar-brand" style="padding-left: 20px"><img class="logo" src="../assets/Imgs//logo_transparent.png"><img/>Virtuverse</span>
+    <span class="navbar-brand"><img class="navlogo" style="margin-left: 2rem" src="../assets/Imgs//logo_transparent.png"><img/>Virtuverse</span>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -71,7 +71,7 @@
           <li class="nav-item" >
             <!-- sign in -->
              <!-- links should be added -->
-    <a class="account" href="/cart"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+    <a class="cart" href="/cart"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
   </li>
   </ul>
   
@@ -88,6 +88,33 @@ export default {
 }
 </script>
 <style scoped>
+
+.navlogo:hover{
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@media screen and (max-width: 300px) {
+  ul {
+    
+    padding-right : 0px !important ;
+  }
+}
+
+
 
 ul{
   padding-right : 20px ;
@@ -115,7 +142,7 @@ padding-right: 10px;
 @media(max-width: 900px) {
   .navbar-text {
     display:flex;
-   padding-left: 40px;
+
   }
 }
 

@@ -89,7 +89,7 @@
   <section id="cards" style="padding-top: 5rem;">
     <div class="container">
       <div class="heading-product">
-        <h2 class="products pb-4">Products</h2>
+        <h2 class="products pb-4">Products in demand</h2>
       </div>
       <div class="row"  style="gap:2rem">
         <div class="col-sm">
