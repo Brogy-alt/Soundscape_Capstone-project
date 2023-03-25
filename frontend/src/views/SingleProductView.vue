@@ -10,6 +10,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ product?.prodName }}</h5>
             </div> <p class="card-text">{{ product?.prodDescription }}</p>
+            <button>Add to cart</button>
         </div>
       </div>
     </div>

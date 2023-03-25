@@ -90,8 +90,8 @@
                         </div>
 
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary">Update Product</button>
+                          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-dark">Update Product</button>
                         </div>
                       </form>
                     </div>
@@ -144,17 +144,17 @@
             <td>
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-light" data-bs-toggle="modal"
-                :data-bs-target="'#exampleModal' + `${product.productID}`">
+                :data-bs-target="'#updateModal' + `${product.productID}`">
                 Edit
               </button>
 
               <!-- Modal -->
-              <div class="modal fade" :id="'exampleModal' + `${product.productID}`" tabindex="-1"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" :id="'updateModal' + `${product.productID}`" tabindex="-1"
+                aria-labelledby="updateModal" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">Update Product</h1>
+                      <h1 class="modal-title fs-5" id="updateModal">Update Product</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -189,8 +189,8 @@
                             placeholder="Add your product image (only accepts post image links)" type="text">
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary">Update Product</button>
+                          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-dark">Update Product</button>
                         </div>
                       </form>
                     </div>
